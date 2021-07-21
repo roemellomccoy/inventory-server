@@ -5,9 +5,9 @@ exports.seed = function(knex) {
     .then(function () {
       // Inserts seed entries
       return knex('helmets').insert([
-        {name: 'Helmet of Despair', wieght: 'Heavy', armor: 50},
-        {name: 'Hat of Misery', wieght: 'Medium', armor: 30},
-        {name: 'Cowl of Darkness', wieght: 'Light', armor: 10},
+        {name: 'Helmet of Despair', weight: 'Heavy', armor: 50},
+        {name: 'Hat of Misery', weight: 'Medium', armor: 30},
+        {name: 'Cowl of Darkness', weight: 'Light', armor: 10},
       ]);
     });
 };
