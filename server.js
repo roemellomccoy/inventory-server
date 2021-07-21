@@ -17,4 +17,4 @@ app.get('/', function(req, res) {
             }))
 })
 
-app.listen(port, () => console.log(`app listening at nba-wiki-sam.herokuapp.com`))
+app.listen(port, () => console.log(`app listening at inventory-server-ram.herokuapp.com`))
