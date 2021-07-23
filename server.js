@@ -58,4 +58,15 @@ app.delete('/chests', function(req, res) {
                 'Armor could not be found'}))
 })
 
+app.post('/chests', function(req, res) {
+    knex('chest')
+    .insert({ name: req.body.name, weight: req.body.weight, armor: req.body.rating})
+    .then(data => res.status(200).json(data))
+    .catch(err =>
+        res.status(404).json({
+            message:
+                'You cannot add this armor'
+        }))
+})
+
 app.listen(port, () => console.log(`app listening at inventory-server-ram.herokuapp.com`))
