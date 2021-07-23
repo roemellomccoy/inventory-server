@@ -49,8 +49,13 @@ app.get('/legs', function(req, res) {
 
 app.delete('/chests', function(req, res) {
     knex('chests')
-    .where({ id: req.body.id })
     .del()
+    .where({id: req.body.id})
+    .then(data => res.status(200).json(data))
+        .catch(err =>
+            res.status(404).json({
+            message:
+                'Armor could not be found')})
 })
 
 app.listen(port, () => console.log(`app listening at inventory-server-ram.herokuapp.com`))
