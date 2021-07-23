@@ -55,7 +55,7 @@ app.delete('/chests', function(req, res) {
         .catch(err =>
             res.status(404).json({
             message:
-                'Armor could not be found')})
+                'Armor could not be found'}))
 })
 
 app.listen(port, () => console.log(`app listening at inventory-server-ram.herokuapp.com`))
