@@ -47,4 +47,10 @@ app.get('/legs', function(req, res) {
             }))
 })
 
+app.delete('/chests', function(req, res) {
+    knex('chests')
+    .where({ id: req.body.id })
+    .del()
+})
+
 app.listen(port, () => console.log(`app listening at inventory-server-ram.herokuapp.com`))
