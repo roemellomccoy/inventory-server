@@ -11,7 +11,7 @@ let name = 'Your name'
 
 app.get('/', function(req, res) {
     res.send({
-        name
+        "name": name
 })
 
 app.get('/helmets', function(req, res) {
