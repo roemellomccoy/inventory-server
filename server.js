@@ -1,4 +1,5 @@
 const express = require('express');
+import {useState} from 'react'
 const knex = require('knex')(require('./knexfile.js')['development']);
 const app = express()
 const port = process.env.PORT || 3000;
@@ -7,7 +8,7 @@ const cors = require('cors')
 app.use(express.json())
 app.use(cors());
 
-let name = 'Your name'
+const [name, setName] = useState('Your Name')
 
 app.get('/', function(req, res) {
     res.send({
@@ -16,12 +17,7 @@ app.get('/', function(req, res) {
 })
 
 app.patch('/', function(req, res){
-    name = req.body.name
-    .then(data => res.status(200).json(data))
-    .catch(err =>
-        res.status(404).json({
-            message: 'No name'
-        }))
+    setName(req.body.name)
 })
 
 app.get('/helmets', function(req, res) {
