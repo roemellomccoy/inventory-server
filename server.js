@@ -120,4 +120,37 @@ app.post('/chests', function(req, res) {
         }))
 })
 
+app.post('/helmets', function(req, res) {
+    knex('helmets')
+    .insert({ name: req.body.name, weight: req.body.weight, armor: req.body.rating })
+    .then(data => res.status(200).json(data))
+    .catch(err =>
+        res.status(404).json({
+            message:
+                'You cannot add this armor'
+        }))
+})
+
+app.post('/arms', function(req, res) {
+    knex('arms')
+    .insert({ name: req.body.name, weight: req.body.weight, armor: req.body.rating })
+    .then(data => res.status(200).json(data))
+    .catch(err =>
+        res.status(404).json({
+            message:
+                'You cannot add this armor'
+        }))
+})
+
+app.post('/legs', function(req, res) {
+    knex('legs')
+    .insert({ name: req.body.name, weight: req.body.weight, armor: req.body.rating })
+    .then(data => res.status(200).json(data))
+    .catch(err =>
+        res.status(404).json({
+            message:
+                'You cannot add this armor'
+        }))
+})
+
 app.listen(port, () => console.log(`app listening at inventory-server-ram.herokuapp.com`))
