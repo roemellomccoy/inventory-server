@@ -7,10 +7,11 @@ const cors = require('cors')
 app.use(express.json())
 app.use(cors());
 
+let name = 'Your name'
+
 app.get('/', function(req, res) {
     res.send({
-        "name": req.body.name
-    })
+        name
 })
 
 app.get('/helmets', function(req, res) {
