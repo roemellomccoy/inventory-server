@@ -20,6 +20,10 @@ app.get('/', function(req, res) {
 app.patch('/', function(req, res){
     console.log(nameObject.name)
     nameObject.name = req.body.name
+    res.send({
+        message:
+            'Your name has changed'
+    })
 })
 
 app.get('/helmets', function(req, res) {
