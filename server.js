@@ -18,8 +18,8 @@ app.get('/', function(req, res) {
 })
 
 app.patch('/', function(req, res){
-    console.log(req.body.name)
-    nameObject.name = req.body.name
+    console.log(req.body.newName)
+    nameObject.name = req.body.newName
     res.send({
         message:
             'Your name has changed'
