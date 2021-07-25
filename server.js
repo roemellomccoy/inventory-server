@@ -7,6 +7,12 @@ const cors = require('cors')
 app.use(express.json())
 app.use(cors());
 
+app.get('/', function(req, res) {
+    res.send([
+        "name": req.body.name
+    ])
+}
+
 app.get('/helmets', function(req, res) {
     knex.select('*')
         .from('helmets')
