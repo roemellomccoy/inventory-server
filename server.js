@@ -15,6 +15,12 @@ app.get('/', function(req, res) {
     })
 })
 
+app.patch('/', function(req, res){
+    res.send({
+        "name": req.body.name
+    })
+})
+
 app.get('/helmets', function(req, res) {
     knex.select('*')
         .from('helmets')
