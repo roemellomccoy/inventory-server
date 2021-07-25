@@ -18,7 +18,6 @@ app.get('/', function(req, res) {
 })
 
 app.patch('/', function(req, res){
-    console.log(req.body)
     nameObject.name = req.body.newName
     res.send({
         message:
@@ -68,6 +67,39 @@ app.get('/legs', function(req, res) {
 
 app.delete('/chests', function(req, res) {
     knex('chests')
+    .del()
+    .where({id: req.body.id})
+    .then(data => res.status(200).json(data))
+        .catch(err =>
+            res.status(404).json({
+            message:
+                'Armor could not be found'}))
+})
+
+app.delete('/helmets', function(req, res) {
+    knex('helmets')
+    .del()
+    .where({id: req.body.id})
+    .then(data => res.status(200).json(data))
+        .catch(err =>
+            res.status(404).json({
+            message:
+                'Armor could not be found'}))
+})
+
+app.delete('/arms', function(req, res) {
+    knex('arms')
+    .del()
+    .where({id: req.body.id})
+    .then(data => res.status(200).json(data))
+        .catch(err =>
+            res.status(404).json({
+            message:
+                'Armor could not be found'}))
+})
+
+app.delete('/legs', function(req, res) {
+    knex('legs')
     .del()
     .where({id: req.body.id})
     .then(data => res.status(200).json(data))
