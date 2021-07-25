@@ -59,8 +59,8 @@ app.delete('/chests', function(req, res) {
 })
 
 app.post('/chests', function(req, res) {
-    knex('chest')
-    .insert({ name: req.body.name, weight: req.body.weight, armor: req.body.rating})
+    knex('chests')
+    .insert({ name: req.body.name, weight: req.body.weight, armor: req.body.rating })
     .then(data => res.status(200).json(data))
     .catch(err =>
         res.status(404).json({
