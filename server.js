@@ -17,6 +17,11 @@ app.get('/', function(req, res) {
 
 app.patch('/', function(req, res){
     name = req.body.name
+    .then(data => res.status(200).json(data))
+    .catch(err =>
+        res.status(404).json({
+            message: 'No name'
+        }))
 })
 
 app.get('/helmets', function(req, res) {
