@@ -16,9 +16,7 @@ app.get('/', function(req, res) {
 })
 
 app.patch('/', function(req, res){
-    res.send({
-        "name": req.body.name
-    })
+    name = req.body.name
 })
 
 app.get('/helmets', function(req, res) {
