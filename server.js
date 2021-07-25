@@ -18,7 +18,7 @@ app.get('/', function(req, res) {
 })
 
 app.patch('/', function(req, res){
-    console.log(nameObject.name)
+    console.log(req.body.name)
     nameObject.name = req.body.name
     res.send({
         message:
